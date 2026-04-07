@@ -3,36 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>逸承工作室 Yi-Cheng Studio | AI Coding 工作室</title>
-  <meta name="description" content="逸承工作室是一間以 AI Coding 為核心的數位工作室，專注品牌網站、展示型網站、輕量工具與未來可擴張的科技平台建置。">
+  <title>逸承工作室 Yi-Cheng Studio</title>
+  <meta name="description" content="逸承工作室以 AI Coding 打造具未來感的品牌網站、展示頁與數位體驗。">
   <meta property="og:title" content="逸承工作室 Yi-Cheng Studio">
-  <meta property="og:description" content="用 AI Coding 更快打造真正能上線、能成長、能持續迭代的網站與數位產品。">
+  <meta property="og:description" content="Future-minded studio for AI-powered websites and digital experiences.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://jiamokchi.github.io/warmth-house/kitchen_case.png">
   <meta property="og:locale" content="zh_TW">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="逸承工作室 Yi-Cheng Studio">
-  <meta name="twitter:description" content="極簡科技感的 AI Coding 工作室網站。">
+  <meta name="twitter:description" content="AI Coding x Future Interface x Brand Build">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0d1b31;
-      --panel: rgba(11, 23, 41, 0.72);
-      --panel-strong: rgba(10, 20, 36, 0.92);
-      --line: rgba(161, 196, 255, 0.14);
-      --text: #edf4ff;
-      --muted: #94a8c8;
-      --accent: #6ee7ff;
-      --accent-2: #8b7bff;
-      --glow: rgba(110, 231, 255, 0.22);
-      --max: 1180px;
-      --radius-xl: 32px;
-      --radius-lg: 24px;
+      --bg: #050816;
+      --bg-2: #0a1124;
+      --panel: rgba(8, 16, 36, 0.78);
+      --panel-strong: rgba(10, 18, 40, 0.95);
+      --line: rgba(127, 209, 255, 0.18);
+      --line-soft: rgba(255, 255, 255, 0.08);
+      --text: #eef5ff;
+      --muted: #8ea3c6;
+      --accent: #79e7ff;
+      --accent-2: #7a7dff;
+      --accent-3: #8fffc8;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
       --radius-md: 18px;
-      --shadow: 0 24px 80px rgba(1, 7, 17, 0.45);
+      --max: 1180px;
     }
 
     * {
@@ -45,12 +46,13 @@
 
     body {
       margin: 0;
-      font-family: "Space Grotesk", "Noto Sans TC", sans-serif;
       color: var(--text);
+      font-family: "Noto Sans TC", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(110, 231, 255, 0.12), transparent 32%),
-        radial-gradient(circle at 85% 10%, rgba(139, 123, 255, 0.14), transparent 26%),
-        linear-gradient(180deg, #08101c 0%, #091526 38%, #050b14 100%);
+        radial-gradient(circle at 12% 18%, rgba(121, 231, 255, 0.16), transparent 24%),
+        radial-gradient(circle at 86% 14%, rgba(122, 125, 255, 0.2), transparent 20%),
+        radial-gradient(circle at 76% 70%, rgba(143, 255, 200, 0.08), transparent 18%),
+        linear-gradient(180deg, #050816 0%, #071020 45%, #040712 100%);
       min-height: 100vh;
     }
 
@@ -62,9 +64,9 @@
       background-image:
         linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 85%);
-      opacity: 0.28;
+      background-size: 44px 44px;
+      opacity: 0.2;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.88), transparent 82%);
     }
 
     a {
@@ -85,46 +87,53 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(5, 12, 22, 0.7);
-      border-bottom: 1px solid rgba(161, 196, 255, 0.08);
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 8, 18, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .nav-inner {
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      min-height: 78px;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 14px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(110, 231, 255, 0.22), rgba(139, 123, 255, 0.2));
+      background: linear-gradient(135deg, rgba(121, 231, 255, 0.22), rgba(122, 125, 255, 0.22));
       border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 30px rgba(110, 231, 255, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 10px 30px rgba(121, 231, 255, 0.12);
+      font-family: "Orbitron", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.08em;
     }
 
-    .brand small {
+    .brand-text {
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .brand-text small {
       display: block;
+      margin-top: 4px;
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      font-family: "Orbitron", sans-serif;
     }
 
     .menu {
@@ -139,11 +148,10 @@
       color: var(--text);
     }
 
-    .cta {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       min-height: 46px;
       padding: 0 18px;
       border-radius: 999px;
@@ -151,32 +159,48 @@
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .cta:hover {
+    .button:hover {
       transform: translateY(-1px);
-      border-color: rgba(255, 255, 255, 0.2);
     }
 
-    .cta-primary {
-      background: linear-gradient(135deg, var(--accent), #99f6ff);
-      color: #031019;
-      font-weight: 700;
-      box-shadow: 0 12px 28px var(--glow);
+    .button.primary {
+      color: #04111c;
+      background: linear-gradient(135deg, var(--accent), #baf6ff);
       border-color: transparent;
+      box-shadow: 0 14px 30px rgba(121, 231, 255, 0.2);
+      font-weight: 800;
     }
 
-    .cta-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
+    .button.ghost {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
     }
 
     .hero {
-      padding: 72px 0 30px;
+      padding: 72px 0 32px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 26px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 24px;
       align-items: stretch;
     }
 
@@ -194,125 +218,205 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 35%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 36%);
     }
 
     .hero-copy {
-      padding: 44px;
-      min-height: 640px;
+      padding: 40px;
+      min-height: 620px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent);
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 42px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    p {
-      margin: 0;
-    }
-
-    .display {
-      margin-top: 22px;
-      font-size: clamp(42px, 7vw, 88px);
+    .hero-title {
+      margin: 18px 0 0;
+      font-family: "Orbitron", "Noto Sans TC", sans-serif;
+      font-size: clamp(42px, 7vw, 84px);
       line-height: 0.95;
       letter-spacing: -0.05em;
-      font-weight: 700;
-      max-width: 11ch;
+      max-width: 10ch;
     }
 
-    .display strong {
+    .hero-title span {
       color: var(--accent);
-      font-weight: 700;
     }
 
-    .lead {
-      margin-top: 24px;
-      max-width: 680px;
-      color: #c3d1e7;
-      font-size: 18px;
-      line-height: 1.8;
+    .hero-copy p {
+      margin-top: 22px;
+      max-width: 600px;
+      color: #c8d4ea;
+      font-size: 17px;
+      line-height: 1.9;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 32px;
+      gap: 12px;
+      margin-top: 28px;
     }
 
-    .hero-meta {
+    .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 38px;
+      gap: 14px;
+      margin-top: 34px;
     }
 
-    .meta-card {
+    .stat {
       padding: 18px;
       border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--line-soft);
     }
 
-    .meta-card span {
+    .stat strong {
       display: block;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      font-size: 24px;
+      font-family: "Orbitron", sans-serif;
     }
 
-    .meta-card strong {
-      font-size: 21px;
-      line-height: 1.3;
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
     }
 
     .hero-side {
       display: grid;
-      grid-template-rows: 1.08fr 0.92fr;
-      gap: 26px;
+      grid-template-rows: 1.1fr 0.9fr;
+      gap: 24px;
     }
 
-    .future-card,
-    .signal-card {
-      padding: 30px;
-    }
-
-    .future-card {
+    .visual-panel {
+      padding: 20px;
       background:
-        radial-gradient(circle at top right, rgba(110, 231, 255, 0.15), transparent 28%),
-        linear-gradient(180deg, rgba(13, 27, 49, 0.96), rgba(7, 16, 29, 0.96));
+        radial-gradient(circle at top right, rgba(121, 231, 255, 0.15), transparent 24%),
+        linear-gradient(180deg, rgba(7, 14, 30, 0.98), rgba(8, 16, 35, 0.98));
     }
 
-    .signal-stack {
+    .frame {
+      position: relative;
+      height: 100%;
+      min-height: 340px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(122, 125, 255, 0.16), transparent 20%),
+        rgba(7, 15, 32, 0.96);
+      overflow: hidden;
+    }
+
+    .frame-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(121, 231, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(121, 231, 255, 0.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 90%);
+    }
+
+    .frame-orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(14px);
+      opacity: 0.8;
+    }
+
+    .frame-orb.one {
+      width: 180px;
+      height: 180px;
+      top: 20px;
+      right: 22px;
+      background: rgba(121, 231, 255, 0.24);
+    }
+
+    .frame-orb.two {
+      width: 120px;
+      height: 120px;
+      left: 30px;
+      bottom: 34px;
+      background: rgba(122, 125, 255, 0.2);
+    }
+
+    .frame-ui {
+      position: absolute;
+      inset: 24px;
       display: grid;
       gap: 14px;
-      margin-top: 24px;
+      align-content: start;
+    }
+
+    .hud-row {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 14px;
+    }
+
+    .hud-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .hud-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .hud-bar {
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .hud-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .micro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .micro-grid span {
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .signal-panel {
+      padding: 24px;
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
     }
 
     .signal-item {
-      display: flex;
-      align-items: start;
+      display: grid;
+      grid-template-columns: auto 1fr;
       gap: 14px;
       padding: 16px;
       border-radius: 18px;
@@ -321,19 +425,19 @@
     }
 
     .signal-no {
-      min-width: 44px;
-      height: 44px;
-      border-radius: 14px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
-      font-size: 13px;
-      font-weight: 700;
+      border-radius: 14px;
+      background: rgba(121, 231, 255, 0.08);
+      border: 1px solid rgba(121, 231, 255, 0.14);
       color: var(--accent);
-      background: rgba(110, 231, 255, 0.08);
-      border: 1px solid rgba(110, 231, 255, 0.12);
+      font-family: "Orbitron", sans-serif;
+      font-size: 13px;
     }
 
-    .section {
+    section {
       padding: 24px 0 0;
     }
 
@@ -342,209 +446,176 @@
       align-items: end;
       justify-content: space-between;
       gap: 24px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .section-head h2 {
-      font-size: clamp(28px, 4vw, 48px);
-      line-height: 1.05;
+      margin: 14px 0 0;
+      font-size: clamp(28px, 4vw, 46px);
       letter-spacing: -0.04em;
+      line-height: 1.04;
     }
 
     .section-head p {
+      max-width: 560px;
       color: var(--muted);
-      max-width: 620px;
       line-height: 1.8;
     }
 
-    .grid-3 {
+    .services {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      padding: 28px;
+    .service {
+      padding: 26px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.04);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .card h3 {
-      font-size: 26px;
-      line-height: 1.15;
-      margin-bottom: 14px;
+    .service-top span,
+    .case-copy span,
+    .vision-copy span {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .service h3,
+    .case-copy h3,
+    .vision-copy h3 {
+      margin: 14px 0 10px;
+      font-size: 28px;
+      line-height: 1.1;
       letter-spacing: -0.03em;
     }
 
-    .card p {
-      color: #b5c6df;
+    .service p,
+    .case-copy p,
+    .vision-copy p {
+      color: #c2d0e7;
       line-height: 1.8;
     }
 
-    .card ul {
-      margin: 20px 0 0;
+    .service ul {
+      margin: 18px 0 0;
       padding-left: 18px;
-      color: #d3dff2;
+      color: #e1e9f8;
       line-height: 1.9;
     }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .badge {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(110, 231, 255, 0.08);
-      border: 1px solid rgba(110, 231, 255, 0.12);
-      color: #d3fbff;
-      font-size: 13px;
-    }
-
-    .case-grid {
+    .case-grid,
+    .vision-grid,
+    .contact-grid {
       display: grid;
-      grid-template-columns: 0.96fr 1.04fr;
-      gap: 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    .case-visual {
+    .case-shot {
       overflow: hidden;
       border-radius: var(--radius-xl);
-      min-height: 100%;
       border: 1px solid var(--line);
       background: var(--panel-strong);
       box-shadow: var(--shadow);
+      min-height: 100%;
     }
 
-    .case-visual img {
+    .case-shot img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       min-height: 520px;
+      object-fit: cover;
+      object-position: top center;
     }
 
-    .case-copy {
-      padding: 34px;
-    }
-
-    .case-kpis {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
-    }
-
-    .case-kpi {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .case-kpi strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .step {
-      padding: 24px 20px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--line);
-    }
-
-    .step strong {
-      display: block;
-      color: var(--accent);
-      font-size: 13px;
-      margin-bottom: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .step h3 {
-      font-size: 24px;
-      line-height: 1.15;
-      margin-bottom: 12px;
-      letter-spacing: -0.03em;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .faq-item {
-      padding: 24px 26px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .faq-item h3 {
-      margin-bottom: 12px;
-      font-size: 21px;
-    }
-
-    .contact-panel {
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 22px;
+    .case-copy,
+    .vision-copy,
+    .contact-card {
+      padding: 32px;
       border-radius: var(--radius-xl);
       border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at top left, rgba(110, 231, 255, 0.14), transparent 20%),
-        linear-gradient(180deg, rgba(11, 23, 41, 0.92), rgba(8, 18, 32, 0.96));
+      background: var(--panel);
       box-shadow: var(--shadow);
     }
 
+    .case-metrics,
     .contact-list {
       display: grid;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 22px;
     }
 
+    .metric,
     .contact-item {
       padding: 16px 18px;
       border-radius: 18px;
       background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .contact-item span {
+    .metric strong,
+    .contact-item strong {
       display: block;
-      color: var(--muted);
-      margin-bottom: 6px;
-      font-size: 13px;
+      margin-bottom: 8px;
+      font-size: 20px;
     }
 
-    .contact-note {
-      color: #c3d1e7;
-      line-height: 1.8;
-      margin-top: 18px;
+    .vision-visual {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(121, 231, 255, 0.16), transparent 18%),
+        linear-gradient(180deg, rgba(7, 15, 32, 0.98), rgba(8, 16, 35, 0.98));
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .vision-board {
+      height: 100%;
+      min-height: 400px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      display: grid;
+      gap: 14px;
+      background: rgba(5, 11, 25, 0.78);
+    }
+
+    .vision-line {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 14px;
+    }
+
+    .vision-box {
+      border-radius: 18px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .vision-box strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent-3);
+      font-family: "Orbitron", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .footer {
-      padding: 42px 0 60px;
+      padding: 44px 0 64px;
       color: var(--muted);
       font-size: 14px;
     }
@@ -552,10 +623,9 @@
     @media (max-width: 1080px) {
       .hero-grid,
       .case-grid,
-      .contact-panel,
-      .grid-3,
-      .grid-2,
-      .steps {
+      .vision-grid,
+      .contact-grid,
+      .services {
         grid-template-columns: 1fr;
       }
 
@@ -574,10 +644,12 @@
       }
 
       .hero-copy,
-      .future-card,
-      .signal-card,
+      .signal-panel,
       .case-copy,
-      .contact-panel {
+      .vision-copy,
+      .contact-card,
+      .service,
+      .visual-panel {
         padding: 24px;
       }
 
@@ -585,17 +657,17 @@
         min-height: auto;
       }
 
-      .hero-meta,
-      .case-kpis {
+      .hero-stats {
         grid-template-columns: 1fr;
       }
 
-      .display {
-        max-width: none;
+      .hud-row,
+      .vision-line {
+        grid-template-columns: 1fr;
       }
 
-      .nav-inner {
-        min-height: 70px;
+      .case-shot img {
+        min-height: 360px;
       }
     }
   </style>
@@ -605,19 +677,18 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top">
         <div class="brand-mark">YC</div>
-        <div>
+        <div class="brand-text">
           逸承工作室
           <small>Yi-Cheng Studio</small>
         </div>
       </a>
       <div class="menu">
-        <a href="#services">服務</a>
-        <a href="#case">案例</a>
-        <a href="#process">流程</a>
-        <a href="#vision">藍圖</a>
-        <a href="#contact">聯絡</a>
+        <a href="#services">Services</a>
+        <a href="#case">Case</a>
+        <a href="#vision">Vision</a>
+        <a href="#contact">Contact</a>
       </div>
-      <a class="cta cta-secondary" href="#contact">先聊聊需求</a>
+      <a class="button ghost" href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -627,68 +698,95 @@
         <article class="panel hero-copy">
           <div>
             <div class="eyebrow">AI Coding Studio</div>
-            <h1 class="display">用 <strong>AI Coding</strong> 更快把網站與想法做成真的</h1>
-            <p class="lead">
-              逸承工作室專注於品牌網站、展示型網站與輕量數位產品建置。不是只把畫面做出來，而是用 AI 加速開發，把更多時間留給架構、內容與真正有商業價值的決策。
-            </p>
+            <h1 class="hero-title">BUILD THE <span>NEXT SCREEN</span></h1>
+            <p>逸承工作室打造具未來感的品牌網站、展示頁與數位介面，讓想法更快變成能被看見、能被記住的線上體驗。</p>
             <div class="hero-actions">
-              <a class="cta cta-primary" href="#contact">預約討論</a>
-              <a class="cta cta-secondary" href="#case">查看主案例</a>
+              <a class="button primary" href="#case">View Case</a>
+              <a class="button ghost" href="#services">Our Focus</a>
             </div>
-            <div class="hero-meta">
-              <div class="meta-card">
-                <span>Current Focus</span>
-                <strong>品牌網站<br>展示頁與原型</strong>
+            <div class="hero-stats">
+              <div class="stat">
+                <strong>AI</strong>
+                <span>以 AI Coding 加速製作與迭代</span>
               </div>
-              <div class="meta-card">
-                <span>Build Mode</span>
-                <strong>靜態站優先<br>GitHub Pages 上線</strong>
+              <div class="stat">
+                <strong>WEB</strong>
+                <span>品牌網站與展示型體驗優先</span>
               </div>
-              <div class="meta-card">
-                <span>Future Direction</span>
-                <strong>科技內容<br>遊戲區與 3C 商城</strong>
+              <div class="stat">
+                <strong>NEXT</strong>
+                <span>延伸科技內容、遊戲與 3C 平台</span>
               </div>
             </div>
           </div>
         </article>
 
         <div class="hero-side">
-          <article class="panel future-card" id="vision">
-            <div class="eyebrow">Studio Vision</div>
-            <h2 style="font-size: clamp(30px, 4vw, 46px); line-height: 1.02; letter-spacing: -0.04em; margin-top: 18px;">從工作室網站，長成一個更像「三創」的科技入口</h2>
-            <p style="margin-top: 18px; color: #c3d1e7; line-height: 1.85;">
-              第一階段先建立工作室形象與接案能力，第二階段再擴充科技新知、遊戲內容與 3C 商品展示，最終發展成兼具內容、社群與商業轉換的科技平台。
-            </p>
-            <div class="badge-row">
-              <span class="badge">科技新知</span>
-              <span class="badge">遊戲專區</span>
-              <span class="badge">3C 商城</span>
-              <span class="badge">內容導購</span>
+          <article class="panel visual-panel">
+            <div class="frame">
+              <div class="frame-grid"></div>
+              <div class="frame-orb one"></div>
+              <div class="frame-orb two"></div>
+              <div class="frame-ui">
+                <div class="hud-row">
+                  <div class="hud-card">
+                    <strong>System</strong>
+                    Future Interface / Studio Identity / Fast Build
+                    <div class="hud-bar"><span style="width: 78%;"></span></div>
+                  </div>
+                  <div class="hud-card">
+                    <strong>Status</strong>
+                    Online Prototype
+                    <div class="hud-bar"><span style="width: 62%;"></span></div>
+                  </div>
+                </div>
+                <div class="hud-row">
+                  <div class="hud-card">
+                    <strong>Mode</strong>
+                    Visual-forward layout with compact copy
+                    <div class="micro-grid">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="hud-card">
+                    <strong>Signal</strong>
+                    Future 70% / Game UI 30%
+                    <div class="hud-bar"><span style="width: 70%;"></span></div>
+                  </div>
+                </div>
+                <div class="hud-card">
+                  <strong>Expansion</strong>
+                  Tech feed / Game zone / 3C commerce
+                  <div class="hud-bar"><span style="width: 56%;"></span></div>
+                </div>
+              </div>
             </div>
           </article>
 
-          <article class="panel signal-card">
-            <div class="eyebrow">Why This Model</div>
-            <div class="signal-stack">
+          <article class="panel signal-panel">
+            <div class="eyebrow">Core Signal</div>
+            <div class="signal-list">
               <div class="signal-item">
                 <div class="signal-no">01</div>
                 <div>
-                  <h3 style="font-size: 22px; margin-bottom: 8px;">先快，再穩</h3>
-                  <p>先用 GitHub Pages 做出可公開、可分享、可累積的第一版，之後再視流量與功能需求升級。</p>
+                  <strong>Future First</strong>
+                  冷色科技感、介面式卡片、乾淨結構。
                 </div>
               </div>
               <div class="signal-item">
                 <div class="signal-no">02</div>
                 <div>
-                  <h3 style="font-size: 22px; margin-bottom: 8px;">案例先做深</h3>
-                  <p>現階段不硬湊作品數量，而是把 `Warmth House` 做成完整案例，建立信任感。</p>
+                  <strong>Less Copy</strong>
+                  文字精簡，讓畫面和模組主導節奏。
                 </div>
               </div>
               <div class="signal-item">
                 <div class="signal-no">03</div>
                 <div>
-                  <h3 style="font-size: 22px; margin-bottom: 8px;">保留未來擴張性</h3>
-                  <p>內容結構會先預留部落格、分類導覽與商城入口，避免之後整站推倒重來。</p>
+                  <strong>Game Accent</strong>
+                  用 HUD 與 UI 語言點綴，不做成遊戲官網。
                 </div>
               </div>
             </div>
@@ -697,239 +795,203 @@
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section id="services">
       <div class="wrap">
         <div class="section-head">
           <div>
             <div class="eyebrow">Services</div>
-            <h2>現階段先專注做對三件事</h2>
+            <h2>Focused build for digital presence</h2>
           </div>
-          <p>這樣的組合最適合剛起步的工作室：夠聚焦、好成交，也和你未來要走向科技平台的方向一致。</p>
+          <p>現階段聚焦三個方向，先把辨識度、上線速度與展示品質做起來。</p>
         </div>
-        <div class="grid-3">
-          <article class="card">
-            <h3>品牌形象網站</h3>
-            <p>幫個人品牌、小型團隊或工作室建立清楚定位，讓訪客一進站就知道你是誰、能幫什麼、值不值得信任。</p>
+        <div class="services">
+          <article class="service">
+            <div class="service-top">
+              <span>01</span>
+              <h3>Brand Site</h3>
+              <p>以品牌識別與內容節奏為核心，做出有記憶點的工作室或品牌網站。</p>
+            </div>
             <ul>
-              <li>首頁策略與內容架構</li>
-              <li>服務說明與信任設計</li>
-              <li>GitHub Pages 快速部署</li>
+              <li>首頁主視覺</li>
+              <li>服務與信任模組</li>
+              <li>可直接上線的靜態站</li>
             </ul>
           </article>
-          <article class="card">
-            <h3>展示型網站 / 活動頁</h3>
-            <p>適合需要快速上線新活動、新產品或單一主題頁面的需求，節奏快、視覺乾淨，方便後續再擴。</p>
+          <article class="service">
+            <div class="service-top">
+              <span>02</span>
+              <h3>Launch Page</h3>
+              <p>適合新產品、活動主題或單一提案，用更快的節奏推出可展示頁面。</p>
+            </div>
             <ul>
-              <li>一頁式 landing page</li>
-              <li>產品導購或活動頁</li>
-              <li>前期驗證市場反應</li>
+              <li>一頁式展示頁</li>
+              <li>視覺導向資訊整理</li>
+              <li>快速部署與分享</li>
             </ul>
           </article>
-          <article class="card">
-            <h3>AI 驅動的小工具</h3>
-            <p>未來會是你的差異化重點。除了網站，還能往內容整理、自動化、資料展示與輕量互動工具延伸。</p>
+          <article class="service">
+            <div class="service-top">
+              <span>03</span>
+              <h3>Future Module</h3>
+              <p>為後續內容區、科技分類、遊戲專區或導購入口預留可延伸的結構。</p>
+            </div>
             <ul>
-              <li>表單流程優化</li>
-              <li>內容整理與資訊聚合</li>
-              <li>輕量互動原型開發</li>
+              <li>分類入口設計</li>
+              <li>卡片式內容模組</li>
+              <li>平台型擴充思維</li>
             </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="case">
+    <section id="case">
       <div class="wrap">
         <div class="section-head">
           <div>
             <div class="eyebrow">Featured Case</div>
-            <h2>主案例先做深，比堆很多空作品更有力</h2>
+            <h2>Warmth House</h2>
           </div>
-          <p>目前最適合放在首頁的，就是 `Warmth House`。它已經是一個完整上線站，可以直接說明你在品牌定位、頁面架構與上線能力上的成果。</p>
+          <p>一個已正式上線的品牌網站案例，呈現內容架構、頁面整合與實際部署能力。</p>
         </div>
         <div class="case-grid">
-          <div class="case-visual">
-            <img src="https://jiamokchi.github.io/warmth-house/kitchen_case.png" alt="Warmth House 網站案例視覺">
+          <div class="case-shot">
+            <img src="https://jiamokchi.github.io/warmth-house/kitchen_case.png" alt="Warmth House case preview">
           </div>
-          <article class="panel case-copy">
-            <div class="eyebrow">Warmth House</div>
-            <h3 style="font-size: clamp(30px, 4vw, 46px); line-height: 1.04; letter-spacing: -0.04em; margin-top: 16px;">從整理服務品牌，做成能承接信任與預約的完整網站</h3>
-            <p style="margin-top: 18px; color: #c3d1e7; line-height: 1.85;">
-              `Warmth House` 是一個以居家整理為主的品牌網站，現場不只是做首頁門面，而是完整梳理服務、案例、FAQ、收費與預約流程，讓訪客能從認識品牌一路走到實際詢問。
-            </p>
-            <div class="badge-row">
-              <span class="badge">Static HTML</span>
-              <span class="badge">Tailwind CDN</span>
-              <span class="badge">GitHub Pages</span>
-              <span class="badge">內容架構規劃</span>
-            </div>
-            <div class="case-kpis">
-              <div class="case-kpi">
-                <strong>多頁架構</strong>
-                不是只有首頁，而是完整建立服務、案例、FAQ 與品牌內容。
+          <article class="case-copy">
+            <span>Live Project</span>
+            <h3>完整的品牌網站，不只是單張首頁</h3>
+            <p>Warmth House 以溫暖服務品牌為核心，整合首頁、品牌故事、服務說明、案例展示與預約動線，形成可公開營運的網站結構。</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <strong>Multi-page</strong>
+                具備首頁、案例、FAQ、品牌介紹等頁面。
               </div>
-              <div class="case-kpi">
-                <strong>可公開上線</strong>
-                已有正式網址，可直接作為你的主案例與信任證明。
+              <div class="metric">
+                <strong>Live Online</strong>
+                已部署上線，可直接對外展示。
               </div>
-              <div class="case-kpi">
-                <strong>可再擴充</strong>
-                站內已具備後續增補案例、內容與預約流程的基礎。
+              <div class="metric">
+                <strong>Expandable</strong>
+                保留後續內容與案例擴充空間。
               </div>
             </div>
-            <div class="hero-actions" style="margin-top: 28px;">
-              <a class="cta cta-primary" href="https://jiamokchi.github.io/warmth-house/About.html" target="_blank" rel="noreferrer">看案例網站</a>
-              <a class="cta cta-secondary" href="C:\Users\rd8\.gemini\antigravity\scratch\warmth-house\About.html">本地查看案例檔案</a>
+            <div class="hero-actions">
+              <a class="button primary" href="https://jiamokchi.github.io/warmth-house/About.html" target="_blank" rel="noreferrer">Open Site</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="process">
+    <section id="vision">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <div class="eyebrow">Process</div>
-            <h2>合作方式要清楚，接案才會穩</h2>
+            <div class="eyebrow">Vision</div>
+            <h2>From studio site to tech platform</h2>
           </div>
-          <p>你現在作品量還不多時，流程感會是最重要的信任來源之一。這一區未來很值得保留在正式站。</p>
+          <p>網站會先建立工作室識別，之後再往科技新知、遊戲內容與 3C 商城入口延伸。</p>
         </div>
-        <div class="steps">
-          <article class="step">
-            <strong>Step 01</strong>
-            <h3>需求對焦</h3>
-            <p>先確認品牌目標、受眾、頁面方向與目前最需要解決的問題。</p>
+        <div class="vision-grid">
+          <article class="vision-copy">
+            <span>Roadmap</span>
+            <h3>先建立入口，再擴張內容與商業模組</h3>
+            <p>第一步是讓網站具有品牌感與展示力。接著補齊內容分類、遊戲專題、產品卡片與導購入口，慢慢長成具科技氣質的平台型站點。</p>
+            <div class="case-metrics">
+              <div class="metric">
+                <strong>Tech Feed</strong>
+                科技消息與主題分類。
+              </div>
+              <div class="metric">
+                <strong>Game Zone</strong>
+                遊戲資訊、視覺專題與內容入口。
+              </div>
+              <div class="metric">
+                <strong>3C Commerce</strong>
+                商品展示、導購與商城延伸。
+              </div>
+            </div>
           </article>
-          <article class="step">
-            <strong>Step 02</strong>
-            <h3>結構規劃</h3>
-            <p>決定首頁順序、服務模組、案例呈現方式與 CTA 佈局。</p>
-          </article>
-          <article class="step">
-            <strong>Step 03</strong>
-            <h3>AI Coding 製作</h3>
-            <p>用 AI 加速切版與迭代，縮短從想法到可視頁面的時間。</p>
-          </article>
-          <article class="step">
-            <strong>Step 04</strong>
-            <h3>內容修正</h3>
-            <p>根據品牌語氣與需求來回調整，讓網站不是只有樣子而已。</p>
-          </article>
-          <article class="step">
-            <strong>Step 05</strong>
-            <h3>部署上線</h3>
-            <p>先上 GitHub Pages，未來再依流量、功能與商業需求擴張。</p>
-          </article>
+          <div class="vision-visual">
+            <div class="vision-board">
+              <div class="vision-line">
+                <div class="vision-box">
+                  <strong>Stage 1</strong>
+                  Studio Site
+                </div>
+                <div class="vision-box">
+                  <strong>Stage 2</strong>
+                  Content Hub
+                </div>
+              </div>
+              <div class="vision-line">
+                <div class="vision-box">
+                  <strong>Tech</strong>
+                  News / Review / Topic
+                </div>
+                <div class="vision-box">
+                  <strong>Game</strong>
+                  Zone / UI / Feature
+                </div>
+              </div>
+              <div class="vision-box">
+                <strong>Commerce Layer</strong>
+                Product cards / Device picks / Store gateway
+              </div>
+              <div class="vision-box">
+                <strong>Interface Tone</strong>
+                Future display, control-panel rhythm, restrained game accent
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="contact">
       <div class="wrap">
         <div class="section-head">
-          <div>
-            <div class="eyebrow">Roadmap</div>
-            <h2>網站不只是一張名片，而是未來平台的第一塊地基</h2>
-          </div>
-          <p>這段很重要，因為你的目標不是停在接案頁，而是慢慢長成一個科技內容與商品平台。現在先把路徑說清楚，品牌會更有方向感。</p>
-        </div>
-        <div class="grid-2">
-          <article class="card">
-            <h3>Phase 1: 工作室官網</h3>
-            <p>先以接案與作品展示為主，建立定位、案例與聯繫入口，讓網站先能替你帶來對話與機會。</p>
-            <ul>
-              <li>一頁式首頁</li>
-              <li>主案例展示</li>
-              <li>服務定位與聯絡方式</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Phase 2: 科技內容入口</h3>
-            <p>增加科技新知、遊戲觀察、3C 產品整理與內容分類，逐步把流量入口做起來。</p>
-            <ul>
-              <li>文章分類與內容頁</li>
-              <li>遊戲與科技專題區</li>
-              <li>商品導購與商城入口</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">FAQ</div>
-            <h2>先把客戶最容易猶豫的地方講清楚</h2>
-          </div>
-          <p>這一區可以幫你彌補「目前案例數量還少」的弱點，因為它會讓人感受到你有思考、有方法，不是只會做畫面。</p>
-        </div>
-        <div class="faq-list">
-          <article class="faq-item">
-            <h3>AI Coding 做出來的網站，會不會很像模板？</h3>
-            <p>不會。AI 在這裡主要是加速整理、切版與迭代，真正決定網站像不像你品牌的，還是內容架構、視覺選擇與整體判斷。</p>
-          </article>
-          <article class="faq-item">
-            <h3>現在先放 GitHub Pages 會不會太陽春？</h3>
-            <p>對第一階段來說反而很合理。它成本低、部署快、分享方便，適合先建立作品與曝光。等之後需要商城、會員或動態功能，再升級也不晚。</p>
-          </article>
-          <article class="faq-item">
-            <h3>只有一個案例，網站會不會看起來太空？</h3>
-            <p>不會，只要把那一個案例寫深。搭配服務、流程、願景與 FAQ，反而能讓整體更真實，也更適合工作室剛起步的狀態。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="wrap">
-        <article class="contact-panel">
           <div>
             <div class="eyebrow">Contact</div>
-            <h2 style="font-size: clamp(30px, 4vw, 50px); line-height: 1.04; letter-spacing: -0.04em; margin-top: 18px;">現在最適合先做的，是把第一版正式上線</h2>
-            <p class="contact-note">
-              這版首頁就是一個很好的起點。先用 GitHub Pages 建立你的工作室門面，等第二個、第三個案例進來，再慢慢補齊服務頁、案例頁與科技內容區。
-            </p>
+            <h2>Let the next screen begin</h2>
+          </div>
+          <p>目前可先用 GitHub Pages 作為公開入口，後續再依內容與功能需求擴充。</p>
+        </div>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <span class="eyebrow">Studio Profile</span>
             <div class="contact-list">
               <div class="contact-item">
-                <span>Studio Name</span>
-                逸承工作室 Yi-Cheng Studio
+                <strong>逸承工作室</strong>
+                AI Coding / Brand Site / Digital Experience
               </div>
               <div class="contact-item">
-                <span>Main Positioning</span>
-                AI Coding 工作室 / 極簡科技感 / 可擴張的平台型官網
+                <strong>Current Stack</strong>
+                Static site first, GitHub Pages ready
               </div>
               <div class="contact-item">
-                <span>Current Launch Plan</span>
-                靜態網站先上 GitHub Pages，視發展再升級
+                <strong>Direction</strong>
+                Future visual language with game-inspired UI accents
               </div>
             </div>
-          </div>
-          <div class="card" style="background: rgba(255,255,255,0.05);">
-            <h3>我建議的下一步</h3>
-            <p>如果你認同這個方向，下一輪我們可以直接把這個網站做成可正式部署的版本，補上你真正要公開的聯絡方式與更完整的案例頁。</p>
-            <ul>
-              <li>補上聯絡資訊與社群連結</li>
-              <li>拆出 `about`、`services`、`case study` 子頁</li>
-              <li>建立 GitHub repository 並部署 GitHub Pages</li>
-              <li>規劃未來的科技內容與商城資訊架構</li>
-            </ul>
+          </article>
+          <article class="contact-card">
+            <span>Reach Out</span>
+            <h3>Contact channel coming next</h3>
+            <p>下一版可直接替換成你的 Email、社群或表單入口，讓這個網站從展示頁升級成真正可承接詢問的入口。</p>
             <div class="hero-actions">
-              <a class="cta cta-primary" href="mailto:hello@example.com">先放一個聯絡入口</a>
-              <a class="cta cta-secondary" href="https://jiamokchi.github.io/warmth-house/About.html" target="_blank" rel="noreferrer">參考案例外站</a>
+              <a class="button primary" href="https://github.com/jiamokchi/Sonic-Studio" target="_blank" rel="noreferrer">GitHub Repo</a>
+              <a class="button ghost" href="https://jiamokchi.github.io/Sonic-Studio/" target="_blank" rel="noreferrer">Live Page</a>
             </div>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap">
-      逸承工作室第一版提案頁。適合直接作為 GitHub Pages MVP，之後再擴充成完整工作室網站與科技內容平台。
-    </div>
+    <div class="wrap">Yi-Cheng Studio / Future-minded website build</div>
   </footer>
 </body>
 </html>
