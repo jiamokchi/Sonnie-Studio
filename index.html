@@ -310,6 +310,15 @@
       overflow: hidden;
     }
 
+    .rive-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.95;
+    }
+
     .frame-grid {
       position: absolute;
       inset: 0;
@@ -318,6 +327,7 @@
         linear-gradient(90deg, rgba(121, 231, 255, 0.08) 1px, transparent 1px);
       background-size: 34px 34px;
       mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 90%);
+      z-index: 2;
     }
 
     .frame-orb {
@@ -341,6 +351,7 @@
       left: 30px;
       bottom: 34px;
       background: rgba(122, 125, 255, 0.2);
+      z-index: 2;
     }
 
     .frame-ui {
@@ -349,6 +360,7 @@
       display: grid;
       gap: 14px;
       align-content: start;
+      z-index: 3;
     }
 
     .hud-row {
@@ -477,6 +489,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transform-style: preserve-3d;
+      will-change: transform;
     }
 
     .service-top span,
@@ -620,6 +634,11 @@
       font-size: 14px;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+    }
+
     @media (max-width: 1080px) {
       .hero-grid,
       .case-grid,
@@ -695,7 +714,7 @@
   <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
-        <article class="panel hero-copy">
+        <article class="panel hero-copy reveal" data-reveal>
           <div>
             <div class="eyebrow">AI Coding Studio</div>
             <h1 class="hero-title">BUILD THE <span>NEXT SCREEN</span></h1>
@@ -722,8 +741,9 @@
         </article>
 
         <div class="hero-side">
-          <article class="panel visual-panel">
+          <article class="panel visual-panel reveal" data-reveal id="hero-visual">
             <div class="frame">
+              <canvas class="rive-canvas" id="hero-rive" aria-label="Interactive futuristic animation"></canvas>
               <div class="frame-grid"></div>
               <div class="frame-orb one"></div>
               <div class="frame-orb two"></div>
@@ -765,7 +785,7 @@
             </div>
           </article>
 
-          <article class="panel signal-panel">
+          <article class="panel signal-panel reveal" data-reveal>
             <div class="eyebrow">Core Signal</div>
             <div class="signal-list">
               <div class="signal-item">
@@ -795,7 +815,7 @@
       </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="reveal" data-reveal>
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -805,7 +825,7 @@
           <p>現階段聚焦三個方向，先把辨識度、上線速度與展示品質做起來。</p>
         </div>
         <div class="services">
-          <article class="service">
+          <article class="service" data-tilt-card>
             <div class="service-top">
               <span>01</span>
               <h3>Brand Site</h3>
@@ -817,7 +837,7 @@
               <li>可直接上線的靜態站</li>
             </ul>
           </article>
-          <article class="service">
+          <article class="service" data-tilt-card>
             <div class="service-top">
               <span>02</span>
               <h3>Launch Page</h3>
@@ -829,7 +849,7 @@
               <li>快速部署與分享</li>
             </ul>
           </article>
-          <article class="service">
+          <article class="service" data-tilt-card>
             <div class="service-top">
               <span>03</span>
               <h3>Future Module</h3>
@@ -845,7 +865,7 @@
       </div>
     </section>
 
-    <section id="case">
+    <section id="case" class="reveal" data-reveal>
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -884,7 +904,7 @@
       </div>
     </section>
 
-    <section id="vision">
+    <section id="vision" class="reveal" data-reveal>
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -949,7 +969,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="reveal" data-reveal>
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -993,5 +1013,122 @@
   <footer class="footer">
     <div class="wrap">Yi-Cheng Studio / Future-minded website build</div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@rive-app/canvas"></script>
+  <script>
+    if (window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".nav", {
+        y: -24,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+
+      const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+      heroTimeline
+        .from(".eyebrow", { opacity: 0, x: -24, duration: 0.6 })
+        .from(".hero-title", { opacity: 0, y: 36, duration: 0.9 }, "-=0.2")
+        .from(".hero-copy p", { opacity: 0, y: 24, duration: 0.8 }, "-=0.45")
+        .from(".hero-actions .button", { opacity: 0, y: 20, stagger: 0.1, duration: 0.6 }, "-=0.45")
+        .from(".hero-stats .stat", { opacity: 0, y: 24, stagger: 0.1, duration: 0.6 }, "-=0.45");
+
+      gsap.to(".frame-orb.one", {
+        x: 18,
+        y: -12,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+      gsap.to(".frame-orb.two", {
+        x: -12,
+        y: 18,
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+
+      document.querySelectorAll("[data-reveal]").forEach((section) => {
+        gsap.to(section, {
+          opacity: 1,
+          y: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 82%"
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-tilt-card]").forEach((card) => {
+        card.addEventListener("pointermove", (event) => {
+          const rect = card.getBoundingClientRect();
+          const px = (event.clientX - rect.left) / rect.width;
+          const py = (event.clientY - rect.top) / rect.height;
+          gsap.to(card, {
+            rotateY: (px - 0.5) * 10,
+            rotateX: (0.5 - py) * 10,
+            y: -6,
+            duration: 0.35,
+            ease: "power2.out",
+            transformPerspective: 900
+          });
+        });
+
+        card.addEventListener("pointerleave", () => {
+          gsap.to(card, {
+            rotateX: 0,
+            rotateY: 0,
+            y: 0,
+            duration: 0.45,
+            ease: "power3.out"
+          });
+        });
+      });
+
+      const heroVisual = document.getElementById("hero-visual");
+      if (heroVisual) {
+        heroVisual.addEventListener("pointermove", (event) => {
+          const rect = heroVisual.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width - 0.5) * 18;
+          const y = ((event.clientY - rect.top) / rect.height - 0.5) * 18;
+          gsap.to(".frame-ui", { x: x * 0.35, y: y * 0.35, duration: 0.5, ease: "power2.out" });
+          gsap.to(".frame-grid", { x: x * 0.15, y: y * 0.15, duration: 0.6, ease: "power2.out" });
+        });
+
+        heroVisual.addEventListener("pointerleave", () => {
+          gsap.to(".frame-ui, .frame-grid", { x: 0, y: 0, duration: 0.6, ease: "power3.out" });
+        });
+      }
+    }
+
+    const canvas = document.getElementById("hero-rive");
+    if (canvas && window.rive) {
+      const r = new rive.Rive({
+        src: "https://cdn.rive.app/animations/vehicles.riv",
+        canvas,
+        artboard: "Truck",
+        stateMachines: "bumpy",
+        autoplay: true,
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        }
+      });
+
+      window.addEventListener("resize", () => r.resizeDrawingSurfaceToCanvas());
+
+      const heroVisual = document.getElementById("hero-visual");
+      if (heroVisual) {
+        heroVisual.addEventListener("mouseenter", () => r.play());
+        heroVisual.addEventListener("mouseleave", () => r.pause());
+      }
+    }
+  </script>
 </body>
 </html>
